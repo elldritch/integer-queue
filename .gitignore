@@ -1,0 +1,4 @@
+dist/
+benchmarks/results.json
+benchmarks/*.js
+.grunt/

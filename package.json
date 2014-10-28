@@ -1,0 +1,25 @@
+{
+  "name": "kpcb-queue",
+  "version": "0.1.0",
+  "description": "My submission for the KPCB 2014 Engineering Fellows application.",
+  "author": {
+    "name": "Leo Zhang",
+    "email": "leo@leozhang.me",
+    "url": "https://leozhang.me"
+  },
+  "main": "dist/queue.min.js",
+  "scripts": {
+    "test": "mocha --reporter spec --compilers coffee:coffee-script/register",
+    "prepublish": "grunt"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "chai": "*",
+
+    "grunt": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-coffee": "*",
+    "grunt-contrib-clean": "*",
+    "grunt-benchmark": "*"
+  }
+}
