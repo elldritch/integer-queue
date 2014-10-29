@@ -1,33 +1,38 @@
 Queue = require '../dist/queue.min.js'
 
-seq = (Math.floor Math.random() * (2 ** 31) for _ in [0...(2 ** 16)])
+make_array_test = (n) ->
+  n = 10 ** n
+  array = (Math.floor Math.random() * 2 ** 31 for _ in [0...n])
 
-make_array_test = (n, seq) ->
-  name: "2^#{n} elements, native array"
+  name: "Array: #{n} elements"
   maxTime: 1
   fn: ->
-    array = []
+    items = [
+      array.shift()
+      array.shift()
+      array.shift()
+    ]
 
-    for i in [0...n]
-      next = seq[i]
-      array.unshift next
+    for item in items
+      array.push item
 
-    for i in [0...n]
-      array.pop()
+make_queue_test = (n) ->
+  n = 10 ** n
+  q = new Queue n
+  q.enqueue Math.floor Math.random() * 2 ** 31 for _ in [0...n]
 
-make_queue_test = (n, seq) ->
-  name: "2^#{n} elements, queue"
+  name: "Queue: #{n} elements"
   maxTime: 1
   fn: ->
-    q = new Queue n
-
-    for i in [0...n]
-      next = seq[i]
-      q.enqueue next
-
-    for i in [0...n]
+    items = [
       q.dequeue()
+      q.dequeue()
+      q.dequeue()
+    ]
+
+    for item in items
+      q.enqueue item
 
 module.exports =
-  name: 'queue v. native array implementation'
-  tests: (make_queue_test n, seq for n in [0..32] by 3).concat (make_array_test n, seq for n in [0..32] by 3)
+  name: 'Queue vs Array'
+  tests: (make_array_test n for n in [1..8] by 2).concat (make_queue_test n for n in [1..8] by 2)
