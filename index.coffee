@@ -8,13 +8,12 @@ class QueueException extends Error
 class Queue
   @BYTES_PER_ELEMENT: 4
 
-  constructor: (size) ->
-    buffer = new ArrayBuffer Queue.BYTES_PER_ELEMENT * size
+  constructor: (@length) ->
+    buffer = new ArrayBuffer Queue.BYTES_PER_ELEMENT * @length
     @q = new Int32Array buffer
 
     @head = 0
     @tail = 0
-    @length = size
 
   enqueue: (item) ->
     if @tail % @length is @head % @length and @tail isnt 0
