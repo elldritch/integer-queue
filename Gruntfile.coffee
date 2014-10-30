@@ -4,8 +4,11 @@ module.exports = (grunt) ->
 
     coffee:
       compile:
-        files:
-          '.grunt/queue.js': 'index.coffee'
+        src: 'src/**/*.coffee',
+        dest: '.grunt/',
+        ext: '.js'
+        expand: true,
+        flatten: true
 
       benchmark:
         src: ['benchmarks/**/*.coffee']

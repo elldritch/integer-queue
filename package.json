@@ -7,7 +7,7 @@
     "email": "leo@leozhang.me",
     "url": "https://leozhang.me"
   },
-  "main": "dist/queue.min.js",
+  "main": "index.js",
   "scripts": {
     "test": "mocha --reporter spec --compilers coffee:coffee-script/register",
     "prepublish": "grunt"
