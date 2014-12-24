@@ -2,12 +2,23 @@
   "name": "integer-queue",
   "version": "0.1.1",
   "description": "A fast queue for integers.",
+  "keywords": ["queue", "integer"],
+  "homepage": "https://github.com/ilikebits/integer-queue",
+  "bugs": {
+    "url": "https://github.com/ilikebits/integer-queue/issues",
+    "email": "leo@leozhang.me"
+  },
+  "license": "MIT",
   "author": {
     "name": "Leo Zhang",
     "email": "leo@leozhang.me",
     "url": "https://leozhang.me"
   },
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ilikebits/integer-queue.git"
+  },
   "scripts": {
     "test": "mocha --reporter spec --compilers coffee:coffee-script/register",
     "prepublish": "grunt"
