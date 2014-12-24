@@ -1,7 +1,7 @@
 {
-  "name": "kpcb-queue",
-  "version": "0.1.0",
-  "description": "My submission for the KPCB 2014 Engineering Fellows application.",
+  "name": "integer-queue",
+  "version": "0.1.1",
+  "description": "A fast queue for integers.",
   "author": {
     "name": "Leo Zhang",
     "email": "leo@leozhang.me",
@@ -20,6 +20,8 @@
     "grunt-contrib-uglify": "*",
     "grunt-contrib-coffee": "*",
     "grunt-contrib-clean": "*",
-    "grunt-benchmark": "*"
+    "grunt-benchmark": "*",
+
+    "double-ended-queue": "*"
   }
 }
