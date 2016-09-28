@@ -14,7 +14,7 @@ class Queue
     @tail = 0
 
   enqueue: (item) ->
-    if @tail % @length is @head % @length and @tail isnt 0
+    if @tail - @head is @length
       throw new QueueException 'Attempted to add to full queue.'
 
     @q[@tail % @length] = item
